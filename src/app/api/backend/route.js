@@ -23,7 +23,7 @@ async function rephraseInput(inputString) {
     model: "gpt-3.5-turbo",
     messages: [
       {
-        role: "system",
+        role: "assistant",
         content:
           "You are a rephraser and always respond with a rephrased version of the input that is given to a search engine API. Always be succint and use the same words as the input.",
       },
@@ -123,7 +123,7 @@ const getGPTResults = async (inputString) => {
     model: "gpt-3.5-turbo",
     messages: [
       {
-        role: "system",
+        role: "assistant",
         content:
           "You are a answer generator, you will receive top results of similarity search, they are optional to use depending how well they help answer the query.",
       },
@@ -177,7 +177,7 @@ async function generateFollowup(message) {
   const chatCompletion = await openai.chat.completions.create({
     messages: [
       {
-        role: "system",
+        role: "assistant",
         content: `You are a follow up answer generator and always respond with 4 follow up questions based on this input "${message}" in JSON format. i.e. { "follow_up": ["QUESTION_GOES_HERE", "QUESTION_GOES_HERE", "QUESTION_GOES_HERE"] }`,
       },
       {
@@ -185,13 +185,14 @@ async function generateFollowup(message) {
         content: `Generate a 4 follow up questions based on this input ""${message}"" `,
       },
     ],
-    model: "gpt-4",
+    model: "gpt-3.5-turbo",
   });
 // 53. Return the content of the chat completion
   return chatCompletion.choices[0].message.content;
 }
 // 54. Define POST function for API endpoint
 export async function POST(req, res) {
+  
 // 55. Get message from request payload
   const { message } = await req.json();
 // 56. Send query payload

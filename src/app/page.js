@@ -7,9 +7,9 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { createClient } from "@supabase/supabase-js";
 // 2. Initialize Supabase client
-const SUPABASE_URL = "https://duvslrminwfswhezmqli.supabase.co";
+const SUPABASE_URL = "https://bqcrwcfkdpvvuczmazuw.supabase.co";
 const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1dnNscm1pbndmc3doZXptcWxpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTc4OTc4MDYsImV4cCI6MjAxMzQ3MzgwNn0.lvGJAaLpRr5X7uLVpS5IOqVbN8dXDsAjmkG31F8S380";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxY3J3Y2ZrZHB2dnVjem1henV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDU3NDc5MjYsImV4cCI6MjAyMTMyMzkyNn0.Ps1gSI8CU3Ze0WafjoYazqGW6NWJMfQ3N7_cgWAdKe8";
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 // 3. Home component
 export default function Home() {
